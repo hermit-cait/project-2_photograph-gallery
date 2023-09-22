@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Photograph Gallery</title>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1>Photograph Gallery</h1>
+        <!-- <h2>CSS Grid Project</h2> -->
+      </header>
+      <nav class="nav">
+        <ul>
+          <li>Spring</li>
+          <li>Summer</li>
+          <!-- <li onclick="(e)=>displayCollection(e)">Spring</li>
+          <li onclick="(e)=>displayCollection(e)">Summer</li> -->
+          <li>Fall</li>
+          <li>Winter</li>
+        </ul>
+      </nav>
+      <main class="collections-container">
+        <section class="collection spring-collection active">
+          <div class="spring-1"><a href="img/spring-1.jpeg"><h4>23 April 2000</h4></a></div>          
+          <div class="spring-2"><a href="img/spring-2.jpeg"><h4>23 April 2000</h4></a></div>
+          <div class="spring-3"><a href="img/spring-3.jpeg"><h4>23 April 2000</h4></a></div>
+          <div class="spring-4"><a href="img/spring-4.jpeg"><h4>23 April 2000</h4></a></div>
+          <div class="spring-5"><a href="img/spring-5.jpeg"><h4>23 April 2000</h4></a></div>
+          <div class="spring-6"><a href="img/spring-6.jpeg"><h4>23 April 2000</h4></a></div>
+        </section>
+        <!-- todo: Summer Collection -->
+        <section class="collection summer-collection">
+          <div class="summer-1"><a href="img/summer-1.jpeg"><h4>14 July 2002</h4></a></div>
+          <div class="summer-2"><a href="img/summer-2.jpeg"><h4>14 July 2002</h4></a></div>
+          <div class="summer-3"><a href="img/summer-3.jpeg"><h4>14 July 2002</h4></a></div>
+          <div class="summer-4"><a href="img/summer-4.jpeg"><h4>14 July 2002</h4></a></div>
+          <div class="summer-5"><a href="img/summer-5.jpeg"><h4>14 July 2002</h4></a></div>
+          <div class="summer-6"><a href="img/summer-6.jpeg"><h4>14 July 2002</h4></a></div>
+        </section>
+        <!-- todo: fall Collection-->
+        <section class="collection fall-collection">
+          <div class="fall-1"><a href="img/fall-1.jpeg"><h4>5 October 2018</h4></a></div>
+          <div class="fall-2"><a href="img/fall-2.jpeg"><h4>5 October 2018</h4></a></div>
+          <div class="fall-3"><a href="img/fall-3.jpeg"><h4>5 October 2018</h4></a></div>
+          <div class="fall-4"><a href="img/fall-4.jpeg"><h4>5 October 2018</h4></a></div>
+          <div class="fall-5"><a href="img/fall-5.jpeg"><h4>5 October 2018</h4></a></div>
+          <div class="fall-6"><a href="img/fall-6.jpeg"><h4>5 October 2018</h4></a></div>
+        </section>
+        <section class="collection winter-collection">
+          <div class="winter-1"><a href="img/winter-1.jpeg"><h4>25 December 2022</h4></a></div>
+          <div class="winter-2"><a href="img/winter-2.jpeg"><h4>25 December 2022</h4></a></div>
+          <div class="winter-3"><a href="img/winter-3.jpeg"><h4>25 December 2022</h4></a></div>
+          <div class="winter-4"><a href="img/winter-4.jpeg"><h4>25 December 2022</h4></a></div>
+          <div class="winter-5"><a href="img/winter-5.jpeg"><h4>25 December 2022</h4></a></div>
+          <div class="winter-6"><a href="img/winter-6.jpeg"><h4>25 December 2022</h4></a></div>
+        </section>
+      </main>
+      <footer class="footer">
+        <a href="https://norbertbm.com">&copy; 2022 @Menyhart Media</a>
+      </footer>
+    </div>
+    <script>
+      // loop over all list items and add a click event listener
+      const listOfItems = document.querySelectorAll(".nav ul li");
+      const collections = document.querySelectorAll(".collection");
+
+      listOfItems.forEach((item) => {
+        item.addEventListener("click", (e) => {
+          displayCollection(e);
+        });
+      });
+
+      function displayCollection(e) {
+        collections.forEach((collection) => {
+          collection.classList.remove("active");
+        });
+
+        e.target.innerHTML === "Spring" &&
+          collections[0].classList.add("active");
+        e.target.innerHTML === "Summer" &&
+          collections[1].classList.add("active");
+        e.target.innerHTML === "Fall" && collections[2].classList.add("active");
+        e.target.innerHTML === "Winter" &&
+          collections[3].classList.add("active");
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style-type: none;
+  text-align: center;
+  user-select: none;
+}
+
+:root {
+  --primary-colour: #f9f9f9;
+  --secondary-colour: #222;
+  --default-fs: 1rem;
+  --transition: all 0.3s ease-in-out;
+}
+
+body {
+  background-color: var(--primary-colour);
+  font-family: "Roboto";
+}
+
+a {
+  color: white;
+}
+
+footer a {
+  color: var(--secondary-colour);
+}
+
+a:visited {
+  color: tomato;
+}
+
+/* Header and navigation */
+
+h1 {
+  color: var(--secondary-colour);
+  font-size: calc(var(--default-fs) + 4rem);
+  margin: 3rem 0;
+}
+
+.nav ul {
+  max-width: 52rem;
+  margin: 2.5rem auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+}
+
+.nav ul li {
+  font-size: 1.3rem;
+  background-color: var(--secondary-colour);
+  color: var(--primary-colour);
+  padding: 0.75rem;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.nav ul li:hover {
+  background-color: var(--primary-colour);
+  color: var(--secondary-colour);
+  transition: var(--transition);
+}
+
+/* Collections */
+
+.collection {
+  background-color: #eee;
+  max-width: 62rem;
+  height: 40rem;
+  background-color: var(--secondary-colour);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: auto;
+  gap: 1rem;
+  margin: auto;
+  margin-block-end: 6rem;
+}
+
+.collection {
+  display: none;
+}
+
+.collection.active {
+  display: grid;
+}
+
+.collection div {
+  background-color: var(--secondary-colour);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  animation: animateImg 0.5s ease;
+  transition: var(--transition);
+}
+
+@keyframes animateImg {
+
+  0% {
+    transform: translateX(-2rem);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+}
+
+/* Spring collection */
+
+.spring-1 {
+  background: url("./img/spring-1.jpeg");
+}
+
+/* .spring-1 {
+  background: url("./img/spring-1.jpeg");
+}
+
+.spring-1 {
+  background: url("./img/spring-1.jpeg");
+}
+
+.spring-1 {
+  background: url("./img/spring-1.jpeg");
+}
+
+.spring-1 {
+  background: url("./img/spring-1.jpeg");
+}
+
+.spring-1 {
+  background: url("./img/spring-1.jpeg");
+} */
+
